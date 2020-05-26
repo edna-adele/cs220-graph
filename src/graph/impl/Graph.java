@@ -62,7 +62,10 @@ public class Graph implements IGraph
      * @return
      */
     public Collection<INode> getAllNodes() {
-        throw new UnsupportedOperationException("Implement this method");
+        //throw new UnsupportedOperationException("Implement this method");
+        
+    	return graph.values();
+        
     }
     
     /**
