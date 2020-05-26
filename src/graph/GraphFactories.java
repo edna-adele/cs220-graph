@@ -100,7 +100,6 @@ public class GraphFactories
      * }
      * </pre>
      * 
-     * Try this graph out at 
      * 
      * Note that edges should be listed only once, and should be given 
      * in alphabetical order (i.e. A -- B, not B -- A).
@@ -315,6 +314,5 @@ public class GraphFactories
         }
         scan.close();
         return g;
-    }
-    
+    }   
 }

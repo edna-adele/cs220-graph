@@ -38,7 +38,6 @@ public class Graph implements IGraph
         INode node = new Node(name);
         graph.put(name, node);
         return node;
-        
     }
 
     /**
@@ -53,7 +52,6 @@ public class Graph implements IGraph
     	if(graph.containsKey(name))
     		return true;
     	return false;
-    	
     }
 
     /**
@@ -63,9 +61,7 @@ public class Graph implements IGraph
      */
     public Collection<INode> getAllNodes() {
         //throw new UnsupportedOperationException("Implement this method");
-        
-    	return graph.values();
-        
+    	return graph.values();   
     }
     
     /**
