@@ -1,6 +1,7 @@
 package graph.impl;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 
 import graph.IGraph;
@@ -16,6 +17,7 @@ import graph.NodeVisitor;
  */
 public class Graph implements IGraph
 {
+	Map<String, INode> map = new HashMap<>();
     
     /**
      * Return the {@link Node} with the given name.
@@ -29,7 +31,14 @@ public class Graph implements IGraph
      * @return
      */
     public INode getOrCreateNode(String name) {
-        throw new UnsupportedOperationException("Implement this method");
+        //throw new UnsupportedOperationException("Implement this method");
+        if(map.containsKey(name))
+        	return map.get(name);
+        
+        INode node = new Node(name);
+        map.put(name, node);
+        return node;
+        
     }
 
     /**
