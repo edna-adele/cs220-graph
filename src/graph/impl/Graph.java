@@ -1,8 +1,13 @@
 package graph.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 
 import graph.IGraph;
 import graph.INode;
@@ -76,7 +81,26 @@ public class Graph implements IGraph
     public void breadthFirstSearch(String startNodeName, NodeVisitor v)
     {
         // TODO: Implement this method
-        throw new UnsupportedOperationException("Implement this method");
+        //throw new UnsupportedOperationException("Implement this method");
+    	Set<INode> visited = new HashSet<INode>();
+    	Queue<INode> t = new LinkedList<INode>();
+    	
+    	t.add(graph.get(startNodeName));
+    	
+    	while(!t.isEmpty()) {
+    		INode n = t.poll();
+    		if(visited.contains(n))
+    			continue;
+    		v.visit(n);
+    		visited.add(n);
+    		
+    		ArrayList<INode> neighbors = new ArrayList<INode>();
+    		neighbors.addAll(n.getNeighbors());
+    		
+    		for(int i=0; i<neighbors.size(); i++) 
+    			if(!visited.contains(neighbors.get(i)))
+    				t.add(neighbors.get(i));	
+    	}
     }
 
     /**
