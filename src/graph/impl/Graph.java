@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
@@ -150,8 +151,17 @@ public class Graph implements IGraph
      * @return
      */
     public Map<INode,Integer> dijkstra(String startName) {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Implement this method");
+        //throw new UnsupportedOperationException("Implement this method");
+    	Map<INode, Integer> r = new HashMap<INode, Integer>();
+    	PriorityQueue<Path> q = new PriorityQueue<Path>();
+    	
+    	q.add(new Path(startName, 0));
+    	while(q.size() < graph.size()) {
+    		Path next = q.poll();
+    		//INode node = graph.get()
+    	}
+    	
+    	return r;
     }
     
     /**
